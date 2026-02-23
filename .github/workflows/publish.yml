@@ -21,4 +21,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm build && node scripts/assemble.mjs && tfx extension publish --manifest-globs vss-extension.json --token ${{ secrets.MARKETPLACE_TOKEN }}
+      - run: pnpm publish:marketplace
+        env:
+          MARKETPLACE_TOKEN: ${{ secrets.MARKETPLACE_TOKEN }}

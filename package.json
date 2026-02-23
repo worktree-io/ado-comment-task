@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ncc build src/azure/index.mjs -o dist --license licenses.txt",
     "vsix": "pnpm build && node scripts/assemble.mjs && tfx extension create --manifest-globs vss-extension.json",
-    "publish:marketplace": "pnpm build && node scripts/assemble.mjs && tfx extension publish --manifest-globs vss-extension.json",
+    "publish:marketplace": "pnpm build && node scripts/assemble.mjs && tfx extension publish --manifest-globs vss-extension.json --token $MARKETPLACE_TOKEN",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"

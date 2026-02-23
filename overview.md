@@ -13,11 +13,7 @@ When a work item is created in Azure DevOps, this pipeline task automatically po
 3. This task posts an **Open workspace** comment on the work item
 4. Any team member clicks the link to open an isolated workspace instantly
 
-The comment looks like this:
-
-> A workspace is ready for this work item.
->
-> [![Open workspace →](https://img.shields.io/badge/Open_workspace_%E2%86%92-F05032?style=for-the-badge&logo=git&logoColor=white)](https://worktree.io)
+![Worktree comment posted on a work item](images/overview.png)
 
 ---
 

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "worktree-comment",
   "name": "Worktree",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "worktree-io",
   "targets": [
     {

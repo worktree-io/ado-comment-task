@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "worktree-comment",
   "name": "Worktree",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "worktree-io",
   "targets": [
     {
@@ -10,6 +10,7 @@
     }
   ],
   "description": "Post an Open workspace link on every new work item",
+  "galleryFlags": ["Public"],
   "categories": ["Azure Pipelines"],
   "icons": {
     "default": "images/extension-icon.png"

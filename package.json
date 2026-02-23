@@ -8,6 +8,8 @@
   "type": "module",
   "scripts": {
     "build": "ncc build src/azure/index.mjs -o dist --license licenses.txt",
+    "vsix": "pnpm build && node scripts/assemble.mjs && tfx extension create --manifest-globs vss-extension.json",
+    "publish:marketplace": "pnpm build && node scripts/assemble.mjs && tfx extension publish --manifest-globs vss-extension.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@vercel/ncc": "^0.38.3",
     "eslint-config-agent": "^2.0.1",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "tfx-cli": "^0.17.0"
   }
 }

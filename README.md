@@ -22,6 +22,22 @@ The task is designed to be triggered by a service hook on work item creation. It
 | `token` | `$(System.AccessToken)` | ADO access token used to post the comment. |
 | `workItemId` | `$(System.WorkItemId)` | ID of the work item to comment on. |
 
+## Publishing
+
+The extension is distributed via the [Visual Studio Marketplace](https://marketplace.visualstudio.com/azuredevops).
+
+**Prerequisites:** a publisher account at `https://marketplace.visualstudio.com/manage` with publisher ID `worktree-io`, and a Personal Access Token with the **Marketplace (publish)** scope.
+
+```bash
+# Create a .vsix package locally
+pnpm vsix
+
+# Package and publish to the marketplace
+pnpm publish:marketplace --token <PAT>
+```
+
+`pnpm vsix` builds the source, assembles the `WorktreeCommentTask/` staging folder, and produces a `.vsix` file via `tfx extension create`.
+
 ## Development
 
 **Prerequisites:** Node.js 20+, pnpm

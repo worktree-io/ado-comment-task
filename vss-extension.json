@@ -1,0 +1,29 @@
+{
+  "manifestVersion": 1,
+  "id": "worktree-comment",
+  "name": "Worktree",
+  "version": "1.0.0",
+  "publisher": "worktree-io",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Post an Open workspace link on every new work item",
+  "categories": ["Azure Pipelines"],
+  "files": [
+    {
+      "path": "WorktreeCommentTask"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "WorktreeComment",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "WorktreeCommentTask"
+      }
+    }
+  ]
+}

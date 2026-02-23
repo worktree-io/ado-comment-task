@@ -1,0 +1,23 @@
+{
+  "name": "ado-comment-task",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.29.3",
+  "description": "Azure DevOps Pipeline Task that posts an Open workspace comment on new work items",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build src/azure/index.mjs -o dist --license licenses.txt",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3",
+    "eslint-config-agent": "^2.0.1",
+    "husky": "^9.1.7"
+  }
+}

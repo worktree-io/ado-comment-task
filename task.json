@@ -1,0 +1,35 @@
+{
+  "id": "1d0b08a9-ac33-4f02-9a0e-fa2ad227d776",
+  "name": "WorktreeComment",
+  "friendlyName": "Worktree",
+  "description": "Post an Open workspace link on every new work item",
+  "author": "worktree-io",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 0
+  },
+  "inputs": [
+    {
+      "name": "token",
+      "type": "string",
+      "label": "Access Token",
+      "defaultValue": "$(System.AccessToken)",
+      "required": false,
+      "helpMarkDown": "ADO access token used to post the comment. Defaults to the built-in System.AccessToken."
+    },
+    {
+      "name": "workItemId",
+      "type": "string",
+      "label": "Work Item ID",
+      "defaultValue": "$(System.WorkItemId)",
+      "required": true,
+      "helpMarkDown": "The ID of the work item to comment on. Populated automatically by the service hook trigger."
+    }
+  ],
+  "execution": {
+    "Node20_1": {
+      "target": "dist/index.mjs"
+    }
+  }
+}

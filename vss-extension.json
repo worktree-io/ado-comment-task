@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "worktree-comment",
   "name": "Worktree",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "worktree-io",
   "targets": [
     {
@@ -27,10 +27,6 @@
     {
       "path": "images",
       "addressable": true
-    },
-    {
-      "path": "overview.md",
-      "assetType": "Microsoft.VisualStudio.Services.Content.Details"
     }
   ],
   "contributions": [

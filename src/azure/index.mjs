@@ -15,7 +15,11 @@ async function run() {
 
     const project = process.env.SYSTEM_TEAMPROJECT ?? "";
 
-    const body = buildCommentBody({ owner, project, workItemId });
+    const codeHost = taskLib.getInput("codeHost") || "github";
+    const gitlabOwner = taskLib.getInput("gitlabOwner") || undefined;
+    const gitlabRepo = taskLib.getInput("gitlabRepo") || undefined;
+
+    const body = buildCommentBody({ owner, project, workItemId, codeHost, gitlabOwner, gitlabRepo });
 
     const url = `https://dev.azure.com/${owner}/${encodeURIComponent(project)}/_apis/wit/workItems/${workItemId}/comments?api-version=7.1`;
 

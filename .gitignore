@@ -2,3 +2,5 @@ node_modules/
 dist/
 WorktreeCommentTask/
 *.vsix
+.env
+.playwright-mcp

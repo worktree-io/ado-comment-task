@@ -25,6 +25,36 @@
       "defaultValue": "$(System.WorkItemId)",
       "required": true,
       "helpMarkDown": "The ID of the work item to comment on. Populated automatically by the service hook trigger."
+    },
+    {
+      "name": "codeHost",
+      "type": "pickList",
+      "label": "Code Host",
+      "defaultValue": "github",
+      "required": false,
+      "helpMarkDown": "The code hosting service for the paired repository.",
+      "options": {
+        "github": "GitHub",
+        "gitlab": "GitLab"
+      }
+    },
+    {
+      "name": "gitlabOwner",
+      "type": "string",
+      "label": "GitLab Owner",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "The GitLab namespace (user or group) of the paired repository. Required when Code Host is GitLab.",
+      "visibleRule": "codeHost = gitlab"
+    },
+    {
+      "name": "gitlabRepo",
+      "type": "string",
+      "label": "GitLab Repository",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "The GitLab repository name. Required when Code Host is GitLab.",
+      "visibleRule": "codeHost = gitlab"
     }
   ],
   "execution": {

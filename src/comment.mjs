@@ -1,7 +1,13 @@
 const BASE_URL = "https://worktree.io"; // eslint-disable-line default/no-hardcoded-urls
 
-export function buildCommentBody({ owner, project, workItemId }) {
-  const url = `${BASE_URL}/open?owner=${owner}&project=${encodeURIComponent(project)}&workItem=${workItemId}`;
+export function buildCommentBody({ owner, project, workItemId, codeHost = "github", gitlabOwner, gitlabRepo }) {
+  const params = new URLSearchParams({ owner, project, workItem: workItemId });
+  if (codeHost === "gitlab") {
+    params.set("codeHost", "gitlab");
+    params.set("gitlabOwner", gitlabOwner ?? "");
+    params.set("gitlabRepo", gitlabRepo ?? "");
+  }
+  const url = `${BASE_URL}/open?${params.toString()}`;
 
   return [
     "A workspace is ready for this work item.",
